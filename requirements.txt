@@ -1,0 +1,8 @@
+click
+Jinja2
+Markdown
+parsel
+Pillow
+PyYAML
+Requests
+setuptools

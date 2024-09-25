@@ -1,0 +1,11 @@
+.vscode/
+/venv/
+.idea
+html/
+temp/
+__pycache__/
+.vscode/.ropeproject/config.py
+.vscode/.ropeproject/objectdb
+output/
+input/
+config/user_configs
