@@ -17,9 +17,8 @@ to satisfy this requirement.
 ## Acknowledgments
 
 * The program internally uses the bdfr tool, which is sourced from the widely popular 
-https://github.com/Serene-Arc/bulk-downloader-for-reddit. Credit to [@Serene-Arc]
-  (https://github.com/Serene-Arc) for creating the backbone to 
-  this project. 
+https://github.com/Serene-Arc/bulk-downloader-for-reddit. Credit to 
+[@Serene-Arc](https://github.com/Serene-Arc) for creating the backbone to this project. 
 * The code in the `bdfr-html` folder is sourced from 
 https://github.com/BlipRanger/bdfr-html and is licensed under the 
 [GPL v3 License](bdfr-html/LICENSE). Massive shout out to [@BlipRanger](https://www.github.com/BlipRanger)
