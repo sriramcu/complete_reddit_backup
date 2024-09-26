@@ -1,5 +1,7 @@
 # Combine BDFR Runs Sequentially
 
+**Periodically archive reddit saved posts and comments to easily readable HTML files.**  
+
 Are you somebody that likes to keep saving reddit posts, in case you want to go back 
 to them in the future? Do you have a hoarding tendency when it 
 comes to this? Do you worry that one day, the user of one of your more important saved 
