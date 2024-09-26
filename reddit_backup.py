@@ -23,7 +23,7 @@ def validate_config_path(full_config_path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-d", "--input_dir", type=str,
-                        required=True)
+                        default='')
     parser.add_argument("-v", "--verbose", type=int,
                         default=1)
     args = parser.parse_args()
@@ -33,9 +33,7 @@ def main():
 
 
 def reddit_backup(existing_bdfr_html_dir):
-    if not os.path.exists(existing_bdfr_html_dir):
-        print(
-            "This program should be run only when you have run bdfrtohtml in the past and you wish to combine outputs")
+    if existing_bdfr_html_dir != '' and not os.path.exists(existing_bdfr_html_dir):
         raise FileNotFoundError(existing_bdfr_html_dir)
 
     root_dir_name = os.path.dirname(os.path.abspath(__file__))
@@ -48,9 +46,12 @@ def reddit_backup(existing_bdfr_html_dir):
     existing_index_file = os.path.join(existing_bdfr_html_dir, "index.html")
 
     validate_config_path(full_config_path)
-    old_output = perform_offline_backup(existing_bdfr_html_dir, program_backup_path)
     run_bdfr_command(full_config_path, bdfr_dir)
     run_bdfrtohtml_command(bdfr_dir, bdfr_html_prog_path, generated_bdfr_html_dir)
+    if existing_bdfr_html_dir == '':
+        return
+
+    old_output = perform_offline_backup(existing_bdfr_html_dir, program_backup_path)
     move_generated_html_pages_to_existing_dir(generated_bdfr_html_dir, existing_bdfr_html_dir, generated_index_file,
                                               existing_index_file)
     reorder_index_html(existing_index_file)  # existing_bdfr_html_dir has the unordered, combined output
@@ -62,8 +63,7 @@ def reddit_backup(existing_bdfr_html_dir):
     os.makedirs(comparison_log_dir, exist_ok=True)
     with open(os.path.join(comparison_log_dir, f"{get_timestamp_str()}.txt"), "w") as f:
         f.write(comparison_logs)
-    print("Reminder to delete bdfr folder if above directory comparison is promising, "
-          "and unsave from reddit while verifying new index")
+    print("Program execution complete. You may un-save from reddit after verifying the new index.html file")
 
 
 def get_timestamp_str():
