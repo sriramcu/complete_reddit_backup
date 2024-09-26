@@ -50,7 +50,6 @@ def reddit_backup(existing_bdfr_html_dir):
     run_bdfrtohtml_command(bdfr_dir, bdfr_html_prog_path, generated_bdfr_html_dir)
     if existing_bdfr_html_dir == '':
         return
-
     old_output = perform_offline_backup(existing_bdfr_html_dir, program_backup_path)
     move_generated_html_pages_to_existing_dir(generated_bdfr_html_dir, existing_bdfr_html_dir, generated_index_file,
                                               existing_index_file)
