@@ -84,7 +84,12 @@ location noted down in the last step of the setup.
 
 ## Note
 
-In case you are experiencing PRAW errors, such as DuplicateReplaceException or 
+1. By pip installing bdfr, you will always use the latest version of the bdfr tool 
+   pushed to PyPI. However, the bdfrtohtml tool is merely "vendored" in the bdfr-html 
+   directory of this repo. It is **not** a submodule and will not be updated, even if 
+   the original repo changes in the future (unchanged since 2021, as of September 2024).
+<br><br>
+2. In case you are experiencing PRAW errors, such as DuplicateReplaceException or 
 AssertionError (usually in _insert_comment()) while this program runs the BDFR tool 
 internally, make the following changes to comment_forest.py in `praw.models` in the 
 place your python libraries are stored on your system:
