@@ -77,4 +77,14 @@ location noted down in the last step of the setup.
    console in verbose mode and also to a timestamp file in the 
    program_backups/comparison_logs directory. If the comparisons reveal some changes 
    made by the program that are undesirable, go to the program backups folder for the 
-   older copy. 
+   older copy.
+
+
+## Note
+
+In case you are experiencing PRAW errors, such as DuplicateReplaceException or 
+AssertionError (usually in _insert_comment()) while this program runs the BDFR tool 
+internally, make the following changes to comment_forest.py in `praw.models` in the 
+place your python libraries are stored on your system:
+
+![img.png](bdfr_praw_errors_fix.png)
